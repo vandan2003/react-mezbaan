@@ -1,0 +1,36 @@
+#booking-window{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 800px;
+    height: fit-content;
+    padding: 20px;
+    background-color: white;
+    animation-name: nav-overlay;
+    animation-duration: 1s;
+    transition: 1s;
+}
+
+#date-and-time,#other-details{
+    width: 95%;
+    margin: auto;
+    box-shadow: 0px 0px 5px 1px;
+    border-radius: 5px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+#date-and-time h3,#other-details h3{
+    color: #ff3333;
+    font-family: candara;
+    font-weight: 600;
+}
+
+
+#other-details label{
+    color: #ff3333;
+    font-family: candara;
+    font-size: 20px;
+}
+

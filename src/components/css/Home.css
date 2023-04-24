@@ -1,0 +1,120 @@
+#mainImg {
+    width: 100vw;
+    height: 800px;
+}
+
+#mainImgHolder {
+    width: 100vw;
+    height: 25.5rem;
+    overflow: hidden;
+}
+
+.my-cover{
+    
+}
+
+#main-img-cover {
+    width: inherit;
+    height: inherit;
+    background-color: rgba(87, 26, 26, 0.8);
+    position: absolute;
+    top: 0%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.first-heading {
+    color: white;
+    font-family: candara;
+    padding-top: 7rem;
+    font-size: 50px;
+}
+
+
+.serv-box{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    background-color: whitesmoke;
+}
+.service-img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0px 0px 5px 1px;
+}
+
+
+#at-your-city-bg {
+    overflow: hidden;
+    width: 100vw;
+    height: 90vh;
+}
+
+#at-your-city-bg img {
+    width: 100vw;
+    height: 100vh;
+}
+
+#cover-2 {
+    width: 100vw;
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    margin-top: -90vh;
+}
+
+#cover-2-content h1 {
+    color: white;
+    padding-left: 50px;
+    font-family: candara;
+    font-size: 60px;
+}
+
+#cover-2-content h1 i {
+    font-size: 50px;
+}
+
+.restaurant-card {
+    width: 300px;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.restaurant-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.rating {
+    width: fit-content;
+    padding: 0px 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
+    background-color: rgba(255, 51, 51, 0.7);
+    color: white;
+    margin: 3px;
+}
+
+.desc-restcard{
+    font-size: 14px;
+}
+
+.view-eye{
+    font-size: 25px;
+    text-align: right;
+}
+
+.myBtn{
+    transition: .2s;
+}
+.myBtn:hover{
+    letter-spacing: 2px;
+}
