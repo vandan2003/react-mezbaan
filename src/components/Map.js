@@ -1,24 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
+import "./css/Map.css"
 
 
-
-export default function Map() {
-    const [position, setPosition] = useState([22.7191, 75.8797]);
-
+export default function Map({restaurant}) {
+    const [position, setPosition] = useState([restaurant.address.lattitude, restaurant.address.longitude]);
   
     useEffect( () => {
-      const watchId = navigator.geolocation.watchPosition(
-        async(position) => {
-          const { latitude, longitude } = position.coords;
-          setPosition([latitude, longitude]);
-        },
-        (error) => console.log(error),
-        { enableHighAccuracy: true }
-      );
-  
-      return () => navigator.geolocation.clearWatch(watchId);
+      
     }, []);
   
     const customMarker = new L.Icon({
@@ -32,12 +22,12 @@ export default function Map() {
     return (
       <MapContainer
         center={position}
-        zoom={13}
-        style={{ height: "300px", width: "70%" , borderRadius:"10px" , boxShadow:"0px 0px 5px 1px" , zIndex:"0"}}
+        zoom={17}
+        id="my-map"
       >
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <TileLayer  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         <Marker position={position} icon={customMarker}>
-          <Popup>Your current location</Popup>
+          <Popup>{restaurant.name}</Popup>
         </Marker>
       </MapContainer>
     );

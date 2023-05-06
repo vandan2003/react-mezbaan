@@ -1,0 +1,10 @@
+#search-result-container{
+    background-image: url("../../../public/mezban-images/main3.jpg");
+    height: 80vh;
+}
+
+#result-data{
+    overflow-y: scroll;
+    height: 69vh;
+    border-radius: 10px;
+}

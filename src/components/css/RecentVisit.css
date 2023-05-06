@@ -1,0 +1,6 @@
+#card-container{
+    height: 75vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* background-image: url("../../../public/mezban-images/main1.jpg"); */
+}
