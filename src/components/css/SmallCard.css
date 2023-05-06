@@ -1,0 +1,84 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.small-card{
+    width: 400px;
+    height: 200px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 0%;
+    display: flex;
+    overflow: hidden;
+    
+}
+
+.sm-restaurant-name{
+    text-align: center;
+    font-size: 24px;
+    height: 50px;
+    font-family: candara;
+    margin-top: 8px;
+}
+
+.small-card div{
+    padding: 0%;
+}
+
+.small-card img{
+    width: 100%;
+    height: 200px;
+}
+
+.sm-details{
+    margin: 0%;
+    display: flex; 
+     justify-content: space-around;width: 90%;
+    /* padding-left:20px; */
+}
+
+.sm-rating{
+    background-color: #ff3838;
+    /* padding: 5px; */
+    color: white;
+    height: fit-content;
+    border-radius: 2px;
+    margin-right: 10px;
+    padding: 0px 10px;
+    font-weight: 600;
+}
+
+.sm-rating i{
+    color: white;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.sm-fav{
+    color: #ff3838;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 1px .1px black;
+    padding: 0px 5px;
+    border-radius: 50%;
+    font-size: 18px;
+    /* padding: 5px 10px; */
+}
+
+.sm-price{
+    border:1px solid #ff3838;
+    color: #ff3838;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sm-btn{
+    background-color: #f74b4b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+}

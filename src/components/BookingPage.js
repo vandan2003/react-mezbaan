@@ -21,31 +21,31 @@ export default function BookingPage({bookingPageStatus,setBookingPageStatus}) {
                         <input type="date" />
                         <div className="row mt-4">
                             <div className="col-4 mt-2">
-                                <button className="btn btn-danger">11:11</button>
+                                <button className="btn btn-danger">10:10 to 11:11</button>
                             </div>
                             <div className="col-4 mt-2">
-                                <button className="btn btn-danger">11:11</button>
+                                <button className="btn btn-danger">10:10 to 11:11</button>
                             </div>
                             <div className="col-4 mt-2">
-                                <button className="btn btn-danger">11:11</button>
+                                <button className="btn btn-danger">10:10 to 11:11</button>
                             </div>
                             <div className="col-4 mt-2">
-                                <button className="btn btn-danger">11:11</button>
+                                <button className="btn btn-danger">10:10 to 11:11</button>
                             </div>
                             <div className="col-4 mt-2">
-                                <button className="btn btn-danger">11:11</button>
+                                <button className="btn btn-danger">10:10 to 11:11</button>
                             </div>
                             <div className="col-4 mt-2">
-                                <button className="btn btn-danger">11:11</button>
+                                <button className="btn btn-danger">10:10 to 11:11</button>
                             </div>
                             <div className="col-4 mt-2">
-                                <button className="btn btn-danger">11:11</button>
+                                <button className="btn btn-danger">10:10 to 11:11</button>
                             </div>
                             <div className="col-4 mt-2">
-                                <button className="btn btn-danger">11:11</button>
+                                <button className="btn btn-danger">10:10 to 11:11</button>
                             </div>
                             <div className="col-4 mt-2">
-                                <button className="btn btn-danger">11:11</button>
+                                <button className="btn btn-danger">10:10 to 11:11</button>
                             </div>
                         </div>
                     </div>

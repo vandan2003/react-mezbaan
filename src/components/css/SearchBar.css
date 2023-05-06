@@ -27,6 +27,8 @@
     background-color: white;
     border-radius: 5px 0px 0px 5px;
     width: 210px;
+    padding-right: 10px;
+    border-right: 1.5px solid grey;
 }
 
 #location-btn i {
@@ -42,6 +44,10 @@
     border-radius: 0px 5px 5px 0px;
     font-size: 25px;
     background-color: #ff3333;
+    color: white;
+}
+
+#search-btn i{
     color: white;
 }
 

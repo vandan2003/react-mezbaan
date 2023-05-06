@@ -1,0 +1,89 @@
+.booking-card{
+    height: 120px;
+    border: 2px solid lightgray;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 0%;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: .5s;
+}
+
+.booking-card:hover{
+    box-shadow: 0px 0px 2px .2px white;
+}
+
+#card-container{
+    /* background: radial-gradient(transparent, black), url("../../../public/mezban-images/logInBg.jpg"); */
+    background-size: contain;
+}
+
+.booking-card img{
+    height: 120px;
+    width: 100%;
+    margin: 0%;
+}
+
+.b-restaurantName{
+    width: 95%;
+    text-align: center;
+    /* border-bottom: 2px solid #ff3333 */
+    color: #464646;
+    margin-top: 5px;
+}
+
+.booking-charges{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    background-color: grey;
+    border-radius: 3px;
+    color: white;
+    margin-bottom: 5px;
+
+}
+
+.b-label{
+    margin: 0%;
+    padding: 0%;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    color: #464646;
+    font-size: 16px;
+    text-decoration: underline;
+    text-decoration-color: #ff3333;
+    font-family: calibri;
+}
+
+.date,.time{
+    margin: 0%;
+    padding: 0%;
+    font-size: 16px;
+    margin-left: 5px;
+    width: 100%;
+    font-family: calibri;
+}
+
+
+.paid{
+    font-family: calibri;
+    font-size: 18px;
+    text-align: center;
+    /* border:1px solid #464646; */
+    height: fit-content;
+    color:#464646;
+    width: 95%;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.b-status div{
+    width: 8px;
+    float: left;
+    margin-top: 8px;
+    margin-right: 5px;
+    height: 8px;
+    border-radius: 50%;
+}
