@@ -11,6 +11,7 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 import { addFavourite, removeFavourite, setUser } from "../redux-config/user-slice";
 import Carousel from "./Carousel";
+import ReactStarRating from "./ReactStarRating";
 
 
 export default function RestaurantPage() {
@@ -23,12 +24,21 @@ export default function RestaurantPage() {
     const [guestsNo, setGuestsNo] = useState("1");
     const [showImages, setShowImages] = useState(false);
     const [showMenus, setShowMenus] = useState(false);
+    const [reviews, setReviews] = useState([]);
+    const [reviewLoading, setReviewLoading] = useState(true);
+    const [ratingFlag, setRatingFlag] = useState(true);
+
     let user = useSelector(state => state.user.currentUser)
     let extraInfo = useRef();
 
     const selectTime = (obj) => {
         setBookingTime(obj.target.innerText);
     }
+
+    const addReview = () => {
+
+    }
+
 
     const addToFavourite = async () => {
         if (!user)
@@ -162,11 +172,20 @@ export default function RestaurantPage() {
         await axios.post(api.ADD_VISIT, { customerId: user._id, restaurantId: restaurant._id, date: dateString, time: currentTime })
     }
 
+    const loadReviews = async () => {
+        const response = await axios(api.GET_RESTAURANTS_REVIEWS + restaurant._id);
+        if (response.data.status) {
+            setReviews(response.data.reviews);
+            setReviewLoading(false);
+        }
+    }
+
     useEffect(() => {
         loadScript("https://checkout.razorpay.com/v1/checkout.js");
         if (user) {
             addVisit();
         }
+        loadReviews()
     }, []);
 
 
@@ -174,16 +193,14 @@ export default function RestaurantPage() {
         {showImages && <Carousel images={restaurant.images} setFlag={setShowImages} />}
         {showMenus && <Carousel images={restaurant.menus} setFlag={setShowMenus} />}
 
-        <div id="rest-container" className="container-fluid">
+        <div id="rest-container" className="container-fluid pt-4">
 
 
             <ToastContainer />
             <Navbar />
-            <div className="search-bar-holder">
-                <SearchBar />
-            </div>
 
-            <div id="rest-img-container" className="row">
+
+            <div id="rest-img-container" className="row mt-5">
                 <div className="col-7">
                     <img id="mainImg" src="/mezban-images/main.jpg" alt="" />
                 </div>
@@ -191,7 +208,7 @@ export default function RestaurantPage() {
                     <div className="row">
                         {restaurant.images.map((image, index) => {
                             return <div key={index} style={{ height: restaurant.images.length * 50 + 'px' }} className={"sideImgHolder col-" + (12 / restaurant.images.length * 2)}>
-                                <img className="sideImg" onClick={() => viewImages(restaurant.images)} src={"mezban-images/" + image} alt="Image" />
+                                <img className="sideImg" onClick={() => viewImages(restaurant.images)} src={"http://localhost:3000/image/" + image} alt="/mezban-images/no-image.png" />
                             </div>
                         })}
                     </div>
@@ -326,19 +343,58 @@ export default function RestaurantPage() {
             </div>
 
             <hr />
-            <div id="review-container" className="container m-auto mb-5">
+            <div id="review-container" className="container m-auto mb-5 p-4">
                 <div className="row">
-                    <div className="col-8 ">
-                        <h4>Reviews (0)</h4>
+                    <h4>Reviews ({reviews.length})</h4>
+                    <div>
+                        <span onClick={addReview} id="add-review">+ Add Review</span>
+                    </div>
+                    <div className="col-8 review-box">
+                        <hr/>
                         <div className="review">
-                            <h3>Username</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur odit facere, quae optio repudiandae unde recusandae voluptate, vitae illum quo omnis aliquam, sapiente deserunt iusto! Quibusdam incidunt in accusamus ea.
-                            </p>
+                            {
+                                reviews.map((review, index) => {
+                                    return <>
+                                        <div className="row">
+                                            <div className="col-7">
+                                                <h3 >{review.customerId.name.toUpperCase()}</h3>
+                                            </div>
+                                            <div className="col-5">
+                                                <span >Date: {review.date}</span>&nbsp;&nbsp;&nbsp;
+                                                <span >Time: {review.time}</span>
+                                            </div>
+                                        </div>
+                                        <p className="review-text">
+                                            {review.review}
+                                        </p>
+                                    </>
+                                })
+                            }
+
                         </div>
                     </div>
-                    <div className="col-4 bg-danger">avava</div>
+                    <div className="col-4" id="rating-showcase">
+                        <h3 id="overall-rating">
+                            Overall Rating
+                            <div className="rest-box-rating">{restaurant.rating}</div>
+                        </h3>
+                        <div className="" id="add-review-box">
+                            <h5>Add Review for {'\"' + restaurant.name + '\"'}</h5>
+                            <div className="from-group">
+                                <textarea placeholder="write a review to describe your experience" minLength={10} maxLength="300" className="form-control mb-3" cols="50" rows="4"></textarea>
+
+                                {ratingFlag && <h5>Rate
+                                    <ReactStarRating setFlag={setRatingFlag} />
+                                </h5>}
+                                <button className="btn btn-danger myBtn mt-4">Upload</button>
+                            </div>
+
+                        </div>
+
+                    </div>
                 </div>
+
+
             </div>
 
             <div>

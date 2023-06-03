@@ -18,7 +18,8 @@ export default function Navbar() {
     
     return <>
         <nav id="navbar">
-            <Link to="/" id="brand-name">mezbaan</Link>
+            <Link to="/" id="brand-name">Mezbaan
+            </Link>
             {!user?<div><Link className="navigationLink" to="/signin">Sign In</Link><Link to="/signup" className="navigationLink" >Sign Up</Link></div>:
             !navStatus && <span onClick={openNavPage}><i id="hamburger" className="fa-solid fa-bars"></i></span>}
             {navStatus && <NavPage navStatus={navStatus} setNavStatus={setNavStatus} signInPageStatus={signInPageStatus} setSignInPageStatus={setSignInPageStatus} />}
