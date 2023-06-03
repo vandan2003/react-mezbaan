@@ -10,7 +10,8 @@ export default {
     USER_SIGN_UP:BACKEND_URL+"/customer/signup",
     TOP_RATED_FOUR:BACKEND_URL+"/restaurant/top-rated-four",
     ADD_VISIT:BACKEND_URL+"/visit/add",
-    GET_USER_VISITS:BACKEND_URL+"/visit/get-by-user",
+    GET_USER_VISITS:BACKEND_URL+"/visit/get-by-customer",
     GET_USER_BOOKINGS:BACKEND_URL+"/booking/history",
-    CANCEL_BOOKING:BACKEND_URL+"/booking/cancel"
+    CANCEL_BOOKING:BACKEND_URL+"/booking/cancel",
+    GET_RESTAURANTS_REVIEWS:BACKEND_URL+"/review/restaurant-reviews/",
 }

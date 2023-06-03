@@ -30,6 +30,13 @@
 }
 
 
+@media screen and (max-width: 768px) {
+    .first-heading{
+        font-size: 40px;
+    }
+  }
+
+
 .serv-box{
     display: flex;
     justify-content: center;
@@ -103,11 +110,22 @@
     margin-right: 0;
     margin-left: 40px;
 }
+
+.cuisines-container , .top-rest-container , .city-rest-container{
+    /* height: 330px; */
+    width: 100vw;
+    overflow-x: scroll;
+    display: flex;
+    /* justify-content: space-around; */
+}
+
 .cuisine-card-holder{
     display: flex;
     justify-content: center;
+    margin: 0px 30px;
     margin-bottom: 30px;
 }
+
 .card-hover {
   width: 260px;
   height: 300px;
